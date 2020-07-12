@@ -17,7 +17,7 @@ def login_view(request):
         if user:
             login(request, user)
             messages.success(request, f'Bienvenido {user.username}')
-            return redirect('')
+            return redirect('budgets:budget')
         else:
             messages.error(request, 'Usuario o Contraseña invalidos')
 
@@ -41,7 +41,7 @@ def register(request):
             messages.success(
                 request, f'El usuario {user.username} ha sido creado exitosamente'
             )
-            return redirect('')
+            return redirect('budgets:budget')
 
     return render(request, template_name, {
         'form': form,

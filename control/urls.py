@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('acceder/', include('users.urls')),
+    path('', include('budgets.urls')),
     path('admin/', admin.site.urls),
 ]
 
