@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card h-100 text-center mt-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <h2 class="card-title">Control</h2>
+                    <p class="card-text">
+                        Control es un aplicativo web el cual permite el control sobre todos tus procesos en la pandemia
+                    </p>
+                    <h4 class="card-tite">¿Todavia no tienes una cuenta?</h4>
+                    <a href="{% url 'users:register' %}" class="btn btn-danger">¡Crea una ahora!</a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <h3 class="card-title">Iniciar Sesion</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="text" name="username" placeholder="Nombre de Usuario" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success">Acceder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
